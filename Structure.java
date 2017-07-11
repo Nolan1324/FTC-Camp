@@ -44,14 +44,14 @@ public class Structure extends OpMode {
     @Override
     public void init() {
         //Here we are giving data to the motor "motor1" that we defined earlier. This time, we do not need to specify the data type, since we already
-		// did that earlier. The reason we defined the motor outside of the "init" method is because if defined here, no other methods would be able to access it.
-		//In other words, the brackets would "trap" the variable in the "init" method if we defined it here. But, since it was not defined inside of a method, all
-		// methods can use it, such as our "loop" method.
+	// did that earlier. The reason we defined the motor outside of the "init" method is because if defined here, no other methods would be able to access it.
+	//In other words, the brackets would "trap" the variable in the "init" method if we defined it here. But, since it was not defined inside of a method, all
+	// methods can use it, such as our "loop" method.
 		
-		//The data that we gave to our motor1 was the result of calling a method. The method that we called was hardwareMap.dcMotor.get(name). When calling a method,
-		// first you type the name, follow it with (), and put the input inside of the parenthesis. In this case, our input is the name of a motor we assigned in
-		// our phone's config file. The name is surrended by quotes because it is a string, a.k.a, text. If we had multiply inputs, the format would be method(input1, input2);
-		//Once again, we end the statment with a semicolon.
+	//The data that we gave to our motor1 was the result of calling a method. The method that we called was hardwareMap.dcMotor.get(name). When calling a method,
+	// first you type the name, follow it with (), and put the input inside of the parenthesis. In this case, our input is the name of a motor we assigned in
+	// our phone's config file. The name is surrended by quotes because it is a string, a.k.a, text. If we had multiply inputs, the format would be method(input1, input2);
+	//Once again, we end the statment with a semicolon.
         motor1 = hardwareMap.dcMotor.get("leftDrive");
     }
 
@@ -59,9 +59,9 @@ public class Structure extends OpMode {
     @Override
     public void loop() {
         //Some variable types have methods built inside of them. For instance, DcMotor variables have the "setPower" method built into them. To call a method built into
-		// a variable, first type the variable's name (in this case, motor1), a period, the method name, and then () containing the input.
-		//The setPower method inputs a double value, i.e. a decimal, between -1.0 and 1.0. We could just pass a raw double through the method, such as 0.0 to stop the motor.
-		//However, in this example, we passed a variable "power" through the method that contains a double value.
+	// a variable, first type the variable's name (in this case, motor1), a period, the method name, and then () containing the input.
+	//The setPower method inputs a double value, i.e. a decimal, between -1.0 and 1.0. We could just pass a raw double through the method, such as 0.0 to stop the motor.
+	//However, in this example, we passed a variable "power" through the method that contains a double value.
         motor1.setPower(power);
     }
 }
