@@ -9,6 +9,8 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 
+//Make sure you understand "Structure.java" before reading this.
+
 //Register the program on the driver station with the name "Basic"
 @TeleOp(name="Basic")
 
