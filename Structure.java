@@ -20,27 +20,27 @@ import com.qualcomm.robotcore.hardware.Servo;
 // controll the robot. When one Class extends another, the child Class inheirits all of the properities of its parent. So, our "Structure" class essentially acts as an OpMode,
 // which means it can control our robot. Without extending "OpMode", our class would have no knowledge of controlling a robot.
 public class Structure extends OpMode {
-	//The rest of our code will be inside the {}s after defining our class.
+    //The rest of our code will be inside the {}s after defining our class.
 
     //Below we are defining a "variable". In programming, a variable is an element that will store information. When creating a new variable in Java,
-	//we want to specify the variables type, name, and in some cases its value. The syntax for this is "type name;" or "type name = value;". 
-	//Here, we are creating a new DcMotor called "motor_1". We did not give it a value, because we will set its value later. Keep in mind that variable types are
-	// case sensitive, so "dcmotor" is not a valid type. Names can be whatever you want, but the common convention is to use "camelCaseFormatting".
-	//The semicolon at the end specifies that this is the end of a statment. When we created our class above, we did not need a semicolon, since it was above
-	// block (i.e., uses {}) rather than a statment.
+    //we want to specify the variables type, name, and in some cases its value. The syntax for this is "type name;" or "type name = value;". 
+    //Here, we are creating a new DcMotor called "motor_1". We did not give it a value, because we will set its value later. Keep in mind that variable types are
+    // case sensitive, so "dcmotor" is not a valid type. Names can be whatever you want, but the common convention is to use "camelCaseFormatting".
+    //The semicolon at the end specifies that this is the end of a statment. When we created our class above, we did not need a semicolon, since it was above
+    // block (i.e., uses {}) rather than a statment.
     DcMotor motor1;
 
-	//This is another variable we created called "power". This time, the type of the variable is "double", which means it is a decimal. Also, this time we set the value to 0.75;
-	// For more information about JAVA data types (not FTC exclusive), go to https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+    //This is another variable we created called "power". This time, the type of the variable is "double", which means it is a decimal. Also, this time we set the value to 0.75;
+    // For more information about JAVA data types (not FTC exclusive), go to https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
     double power = 0.75;
 
-	//Below we have defined a method called "init". A method in java is another word for a function. When defining a method, we start with an access type. For
-	// your purposes, you will only need to use "public". Then, you specify what type of data the method will send back. "init" does not return any data, so we use
-	// "void". Afterwards, we have the method name followed by parenthesis (). Usually, these contain parameters that the method will input. However, "init" does not take
-	// any input. Finally, the method contains {}, similar to how our Class did. Like before, the brackets contain all of the code in the method.
+    //Below we have defined a method called "init". A method in java is another word for a function. When defining a method, we start with an access type. For
+    // your purposes, you will only need to use "public". Then, you specify what type of data the method will send back. "init" does not return any data, so we use
+    // "void". Afterwards, we have the method name followed by parenthesis (). Usually, these contain parameters that the method will input. However, "init" does not take
+    // any input. Finally, the method contains {}, similar to how our Class did. Like before, the brackets contain all of the code in the method.
 	
-	//After defining a method, you usually need to call it in order to use it. However, the "init" method is built into FTC programs, and will always be ran once
-	// before starting the program.
+    //After defining a method, you usually need to call it in order to use it. However, the "init" method is built into FTC programs, and will always be ran once
+    // before starting the program.
     @Override
     public void init() {
         //Here we are giving data to the motor "motor1" that we defined earlier. This time, we do not need to specify the data type, since we already
@@ -55,7 +55,7 @@ public class Structure extends OpMode {
         motor1 = hardwareMap.dcMotor.get("leftDrive");
     }
 
-	//Below is another definition of a method. This time, it is called "loop". Loop is also built into FTC, and will be reptitivley called while the program runs.
+    //Below is another definition of a method. This time, it is called "loop". Loop is also built into FTC, and will be reptitivley called while the program runs.
     @Override
     public void loop() {
         //Some variable types have methods built inside of them. For instance, DcMotor variables have the "setPower" method built into them. To call a method built into
