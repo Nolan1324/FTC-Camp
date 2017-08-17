@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -11,7 +13,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 @Autonomous(name = "AUTO")
 
-public class TimeDrive extends LinearOpMode {
+public class AutoBB extends LinearOpMode {
 
     DcMotor leftDrive;
     DcMotor rightDrive;
@@ -37,7 +39,7 @@ public class TimeDrive extends LinearOpMode {
         leftDrive.setPower(1.0);
         rightDrive.setPower(1.0);
 
-        wait(5000);
+        wait(3000);
 
         leftDrive.setPower(0.0);
         rightDrive.setPower(0.0);
