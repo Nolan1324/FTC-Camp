@@ -1,30 +1,44 @@
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+package org.firstinspires.ftc.teamcode;
+
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.util.ElapsedTime;
+import com.qualcomm.robotcore.hardware.Servo;
 
-@Autonomous(name = "TimeDrive")
+/**
+ * Created by Nolan on 8/17/2017.
+ */
+
+@Autonomous(name = "AUTO")
 
 public class TimeDrive extends LinearOpMode {
+
     DcMotor leftDrive;
     DcMotor rightDrive;
 
-    ElapsedTime runtime = new ElapsedTime();
+    DcMotor arm;
+
+    Servo leftClaw;
+    Servo rightClaw;
 
     @Override
     public void runOpMode() throws InterruptedException {
         leftDrive = hardwareMap.dcMotor.get("leftDrive");
         rightDrive = hardwareMap.dcMotor.get("rightDrive");
+        arm = hardwareMap.dcMotor.get("arm");
+
         rightDrive.setDirection(DcMotorSimple.Direction.REVERSE);
+
+        leftClaw = hardwareMap.servo.get("leftClaw");
+        rightClaw = hardwareMap.servo.get("rightClaw");
+
         waitForStart();
-        leftDrive.setPower(0.5);
-        rightDrive.setPower(0.5);
-        runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 1.0)) {
-            idle();
-        }
+
+        leftDrive.setPower(1.0);
+        rightDrive.setPower(1.0);
+
+        wait(5000);
+
         leftDrive.setPower(0.0);
         rightDrive.setPower(0.0);
     }
