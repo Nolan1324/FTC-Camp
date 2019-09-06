@@ -25,7 +25,7 @@ public class TwoWheelDrive extends OpMode {
     Servo arm;
 
     //Create a decimal variable to store general power
-    //The world "final" means that the variable is a constant (i.e. it cannot be editing elsewhere in the code)
+    //The world "final" means that the variable is a constant (i.e. it cannot be edited elsewhere in the code)
     final double power = 0.75;
 
     @Override
@@ -37,15 +37,17 @@ public class TwoWheelDrive extends OpMode {
         //Map the arm variable to its respective config name
         arm = hardwareMap.servo.get("arm");
 
-        //Reverse the right drive motor
+        //Reverse the right drive motor. Depending on how your motors are physically mounted on your robot, you may have to reverse the left motor instead
         rightDrive.setDirection(DcMotorSimple.Direction.REVERSE);
     }
 
     @Override
     public void loop() {
         //Set the power of the wheels to the joy stick values multiplied by the power constant
-        leftDrive.setPower(gamepad1.left_stick_y);
-        rightDrive.setPower(gamepad1.right_stick_y);
+        //The jotstick values (gamepad1.left_stick_y and gamepad1.right_stick_y) has a "-" sign to reverse them...
+        //     ...this is because, by default, joystick values equal -1 when pushed forward. We want it to equal 1 when pushed forward, so we negate the value.
+        leftDrive.setPower(-gamepad1.left_stick_y * power);
+        rightDrive.setPower(-gamepad1.right_stick_y * power);
 
         if(gamepad1.a) {
             //If "a" is being pressed:
