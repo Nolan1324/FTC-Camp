@@ -27,8 +27,8 @@ public class TwoWheelDrive extends OpMode {
 
     @Override
     public void loop() {
-        leftDrive.setPower(gamepad1.left_stick_y);
-        rightDrive.setPower(gamepad1.right_stick_y);
+        leftDrive.setPower(-gamepad1.left_stick_y * power);
+        rightDrive.setPower(-gamepad1.right_stick_y * power);
 
         if (gamepad1.a) {
             arm.setPosition(1.0);
